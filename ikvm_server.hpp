@@ -32,6 +32,7 @@ class Server
         ClientData(int s, Input* i) : skipFrame(s), input(i), last_crc{-1}
         {
             needUpdate = false;
+            frameCap = false;
         }
         ~ClientData() = default;
         ClientData(const ClientData&) = default;
@@ -43,6 +44,7 @@ class Server
         Input* input;
         bool needUpdate;
         int64_t last_crc;
+        bool frameCap;
     };
 
     /*
